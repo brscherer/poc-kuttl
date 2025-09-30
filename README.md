@@ -30,36 +30,59 @@ Clone this repo and enter in the repo folder, run:
 === CONT  kuttl/harness/unit
 === CONT  kuttl/harness/integration
 === NAME  kuttl/harness/config
-    logger.go:42: 22:02:42 | config | Ignoring deployment-check as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
-=== NAME  kuttl/harness/integration
-    logger.go:42: 22:02:42 | integration | Ignoring web-app as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 22:08:50 | config | Creating namespace: kuttl-test-liked-civet
 === NAME  kuttl/harness/unit
-    logger.go:42: 22:02:42 | unit | Ignoring pod-basic as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 22:08:50 | unit | Creating namespace: kuttl-test-mutual-crappie
+=== NAME  kuttl/harness/integration
+    logger.go:42: 22:08:50 | integration | Creating namespace: kuttl-test-enabling-tetra
+=== NAME  kuttl/harness/unit
+    logger.go:42: 22:08:50 | unit/0-apply | starting test step 0-apply
+=== NAME  kuttl/harness/integration
+    logger.go:42: 22:08:50 | integration/0-apply | starting test step 0-apply
 === NAME  kuttl/harness/config
-    logger.go:42: 22:02:42 | config | Creating namespace: kuttl-test-moral-locust
-=== NAME  kuttl/harness/unit
-    logger.go:42: 22:02:42 | unit | Creating namespace: kuttl-test-apt-serval
+    logger.go:42: 22:08:50 | config/0-apply | starting test step 0-apply
 === NAME  kuttl/harness/integration
-    logger.go:42: 22:02:42 | integration | Creating namespace: kuttl-test-polished-rhino
-    logger.go:42: 22:02:42 | integration | integration events from ns kuttl-test-polished-rhino:
-=== NAME  kuttl/harness/unit
-    logger.go:42: 22:02:42 | unit | unit events from ns kuttl-test-apt-serval:
+    logger.go:42: 22:08:50 | integration/0-apply | Deployment:kuttl-test-enabling-tetra/web created
 === NAME  kuttl/harness/config
-    logger.go:42: 22:02:42 | config | config events from ns kuttl-test-moral-locust:
-    logger.go:42: 22:02:42 | config | Deleting namespace: kuttl-test-moral-locust
+    logger.go:42: 22:08:50 | config/0-apply | Deployment:kuttl-test-liked-civet/web created
 === NAME  kuttl/harness/unit
-    logger.go:42: 22:02:42 | unit | Deleting namespace: kuttl-test-apt-serval
+    logger.go:42: 22:08:50 | unit/0-apply | Pod:kuttl-test-mutual-crappie/demo-pod created
+=== NAME  kuttl/harness/config
+    logger.go:42: 22:08:50 | config/0-apply | test step completed 0-apply
+    logger.go:42: 22:08:50 | config | config events from ns kuttl-test-liked-civet:
 === NAME  kuttl/harness/integration
-    logger.go:42: 22:02:42 | integration | Deleting namespace: kuttl-test-polished-rhino
+    logger.go:42: 22:08:50 | integration/0-apply | Service:kuttl-test-enabling-tetra/web-svc created
+    logger.go:42: 22:08:50 | integration/0-apply | test step completed 0-apply
+=== NAME  kuttl/harness/config
+    logger.go:42: 22:08:50 | config | Deleting namespace: kuttl-test-liked-civet
+=== NAME  kuttl/harness/integration
+    logger.go:42: 22:08:50 | integration/1- | starting test step 1-
+    logger.go:42: 22:08:51 | integration/1- | test step completed 1-
+    logger.go:42: 22:08:51 | integration | integration events from ns kuttl-test-enabling-tetra:
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:50 -0300 -03        Normal  Pod web-7f8f9d5f9d-k7lq7                Scheduled     Successfully assigned kuttl-test-enabling-tetra/web-7f8f9d5f9d-k7lq7 to minikube default-scheduler
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:50 -0300 -03        Normal  ReplicaSet.apps web-7f8f9d5f9d          SuccessfulCreate       Created pod: web-7f8f9d5f9d-k7lq7       replicaset-controller
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:50 -0300 -03        Normal  Deployment.apps web             ScalingReplicaSet     Scaled up replica set web-7f8f9d5f9d from 0 to 1 deployment-controller
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:51 -0300 -03        Normal  Pod web-7f8f9d5f9d-k7lq7.spec.containers{nginx}       Pulled   Container image "nginx:1.25" already present on machine kubelet
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:51 -0300 -03        Normal  Pod web-7f8f9d5f9d-k7lq7.spec.containers{nginx}       Created  Created container: nginx        kubelet
+    logger.go:42: 22:08:51 | integration | 2025-09-29 22:08:51 -0300 -03        Normal  Pod web-7f8f9d5f9d-k7lq7.spec.containers{nginx}       Started  Started container nginx kubelet
+    logger.go:42: 22:08:51 | integration | Deleting namespace: kuttl-test-enabling-tetra
+=== NAME  kuttl/harness/unit
+    logger.go:42: 22:08:52 | unit/0-apply | test step completed 0-apply
+    logger.go:42: 22:08:52 | unit | unit events from ns kuttl-test-mutual-crappie:
+    logger.go:42: 22:08:52 | unit | 2025-09-29 22:08:50 -0300 -03       Normal  Pod demo-pod            Scheduled       Successfully assigned kuttl-test-mutual-crappie/demo-pod to minikube   default-scheduler
+    logger.go:42: 22:08:52 | unit | 2025-09-29 22:08:51 -0300 -03       Normal  Pod demo-pod.spec.containers{nginx}             Pulled  Container image "nginx:1.25" already present on machine        kubelet
+    logger.go:42: 22:08:52 | unit | 2025-09-29 22:08:51 -0300 -03       Normal  Pod demo-pod.spec.containers{nginx}             Created Created container: nginx       kubelet
+    logger.go:42: 22:08:52 | unit | 2025-09-29 22:08:51 -0300 -03       Normal  Pod demo-pod.spec.containers{nginx}             Started Started container nginx        kubelet
+    logger.go:42: 22:08:52 | unit | Deleting namespace: kuttl-test-mutual-crappie
 === NAME  kuttl
     harness.go:403: run tests finished
     harness.go:510: cleaning up
     harness.go:567: removing temp folder: ""
---- PASS: kuttl (5.23s)
+--- PASS: kuttl (7.17s)
     --- PASS: kuttl/harness (0.00s)
-        --- PASS: kuttl/harness/config (5.11s)
-        --- PASS: kuttl/harness/integration (5.16s)
-        --- PASS: kuttl/harness/unit (5.21s)
+        --- PASS: kuttl/harness/config (5.19s)
+        --- PASS: kuttl/harness/integration (6.24s)
+        --- PASS: kuttl/harness/unit (7.16s)
 PASS
 ```
 
